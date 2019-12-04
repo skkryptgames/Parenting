@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Parenting</string>
+    <string name="authentication_edittext_phonenumber">Phone Number</string>
+    <string name="authentication_edittext_enterotp">Enter OTP</string>
+    <string name="authentication_button_requestotp">Request OTP</string>
+    <string name="authentication_edittext_countrycode">+91</string>
+
 </resources>
