@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:id="@+id/fragment_container"
+    android:clickable="true"
     >
 
     <TextView
         android:id="@+id/par_textview_createaccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create Account"
+        android:text="Add Child"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="20dp"
@@ -37,6 +37,8 @@
         android:background="@drawable/edittext_border"
         />
 
+
+
     <EditText
         android:id="@+id/par_edittext_lastname"
         android:layout_width="match_parent"
@@ -51,35 +53,62 @@
         android:textSize="16sp"
         android:background="@drawable/edittext_border"
         />
-
-    <EditText
-        android:id="@+id/par_edittext_email"
+    <LinearLayout
+        android:id="@+id/par_layout_agegender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_below="@+id/par_edittext_lastname"
         android:layout_marginStart="28dp"
         android:layout_marginEnd="28dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="40dp">
+    <EditText
+        android:layout_weight="1"
+        android:id="@+id/par_edittext_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:padding="12dp"
-        android:hint="Email"
-        android:inputType="textWebEmailAddress|textEmailAddress"
+        android:layout_marginEnd="20dp"
+        android:hint="Age"
+        android:inputType="number"
+        android:digits="0123456789"
+        android:maxLength="3"
         android:textSize="16sp"
         android:background="@drawable/edittext_border"
         />
-
-    <LinearLayout
+    <EditText
+        android:layout_weight="1"
+        android:id="@+id/par_edittext_gender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/par_edittext_email"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginEnd="28dp">
-
+        android:padding="12dp"
+        android:layout_marginStart="20dp"
+        android:hint="Gender"
+        android:textSize="16sp"
+        android:background="@drawable/edittext_border"
+        />
+    </LinearLayout>
+    <Button
+        android:id="@+id/par_button_addanotherchild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Another Child"
+        android:background="@drawable/button_round_bluebackground"
+        android:layout_below="@+id/par_layout_agegender"
+        android:layout_marginTop="48dp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:paddingHorizontal="20dp"
+        android:layout_centerHorizontal="true"/>
     <Button
         android:id="@+id/par_button_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/par_button_addanotherchild"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
         android:text="Next"
         android:textAllCaps="false"
         android:textColor="@color/white"
@@ -87,6 +116,6 @@
         android:textAlignment="center"
         android:background="@drawable/round_button"
         />
-    </LinearLayout>
+
 
 </RelativeLayout>
