@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:id="@+id/fragment_container"
+    android:clickable="true"
     >
 
     <TextView
         android:id="@+id/par_textview_createaccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create Account"
+        android:text="Add Parent"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="20dp"
@@ -51,42 +51,51 @@
         android:textSize="16sp"
         android:background="@drawable/edittext_border"
         />
-
     <EditText
-        android:id="@+id/par_edittext_email"
+    android:id="@+id/par_edittext_email"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/par_edittext_lastname"
+    android:layout_marginStart="28dp"
+    android:layout_marginEnd="28dp"
+    android:layout_marginTop="40dp"
+    android:padding="12dp"
+    android:hint="Email Address"
+        android:inputType="textEmailAddress|textWebEmailAddress"
+    android:textSize="16sp"
+    android:background="@drawable/edittext_border"
+    />
+    <EditText
+        android:id="@+id/par_edittext_phonenumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/par_edittext_lastname"
+        android:layout_below="@+id/par_edittext_email"
         android:layout_marginStart="28dp"
         android:layout_marginEnd="28dp"
         android:layout_marginTop="40dp"
         android:padding="12dp"
-        android:hint="Email"
-        android:inputType="textWebEmailAddress|textEmailAddress"
+        android:hint="Phone Number"
+        android:inputType="phone|number"
+        android:maxLength="13"
         android:textSize="16sp"
         android:background="@drawable/edittext_border"
         />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/par_edittext_email"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginEnd="28dp">
-
     <Button
         android:id="@+id/par_button_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Next"
+        android:layout_below="@+id/par_edittext_phonenumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:text="Done"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:gravity="center"
         android:textAlignment="center"
         android:background="@drawable/round_button"
         />
-    </LinearLayout>
+
 
 </RelativeLayout>
