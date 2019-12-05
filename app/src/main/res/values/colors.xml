@@ -20,4 +20,9 @@
     <color name="orange">#FF9100</color>
     <color name="black">#000000</color>
     <color name="onyx">#1B1C20</color>
+    <color name="Brick">#fb607f</color>
+    <color name="punch">#EC5578</color>
+    <color name="coral">#fe6666</color>
+    <color name="fandango">#df5286</color>
+    <color name="corn">#ffaa1d</color>
 </resources>
