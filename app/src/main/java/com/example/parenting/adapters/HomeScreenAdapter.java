@@ -1,7 +1,6 @@
-package com.example.parenting;
+package com.example.parenting.adapters;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,18 +9,24 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.parenting.R;
+import com.example.parenting.activity.HomeScreenActivity;
+import com.example.parenting.fragment.TasksFragment;
+import com.example.parenting.models.HomeScreenModel;
 
 import java.util.ArrayList;
 
 
-public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.MyViewHolder> {
+public class HomeScreenAdapter extends RecyclerView.Adapter<HomeScreenAdapter.MyViewHolder> {
 
     private Context mContext;
-    private ArrayList<Activity> activities;
+    private ArrayList<HomeScreenModel> activities;
 
-    public ActivityAdapter(Context mContext, ArrayList<Activity> activities) {
+    public HomeScreenAdapter(Context mContext, ArrayList<HomeScreenModel> activities) {
         this.mContext = mContext;
         this.activities = activities;
     }
@@ -29,21 +34,32 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.MyView
 
     @NonNull
     @Override
-    public ActivityAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public HomeScreenAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_item,
                 parent, false);
-        return new ActivityAdapter.MyViewHolder(view);
+        return new HomeScreenAdapter.MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ActivityAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(HomeScreenAdapter.MyViewHolder holder, int position) {
 
         holder.typeActivity.setText(activities.get(position).getActivityNames());
         holder.ActivityImage.setImageDrawable(mContext.getResources().getDrawable(activities.
                 get(position).getActivityImages()));
 
         //holder.cardActivity.setBackgroundResource(R.drawable.card_background);
+
+        holder.ActivityImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new TasksFragment();
+                FragmentTransaction fragmentTransaction = ((HomeScreenActivity)mContext).getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
 
         if(position == 0){
             holder.cardActivity.setCardBackgroundColor(mContext.getResources().getColor(R.color.silentBlue));

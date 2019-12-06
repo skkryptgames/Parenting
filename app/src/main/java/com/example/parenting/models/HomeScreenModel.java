@@ -1,15 +1,15 @@
-package com.example.parenting;
+package com.example.parenting.models;
 
-public class Activity {
+public class HomeScreenModel {
 
      private int activityImages;
      private String activityNames;
 
-     public Activity(){
+     public HomeScreenModel(){
 
      }
 
-    public Activity(int activityImages, String activityNames) {
+    public HomeScreenModel(int activityImages, String activityNames) {
         this.activityImages = activityImages;
         this.activityNames = activityNames;
     }
