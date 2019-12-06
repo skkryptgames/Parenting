@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/par_layout_tasks"
+    android:background="#FFAA1D">
+
+    <ImageView
+        android:id="@+id/par_imageview_image"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_grape"/>
+
+    <ImageView
+        android:id="@+id/par_imageview_leftarrow"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_left_arrowhead_variant"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="12dp"/>
+
+    <ImageView
+        android:id="@+id/par_imageview_rightarrow"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/right"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="12dp"/>
+
+    <TextView
+        android:id="@+id/par_textview_imagename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FRUIT"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/white"
+        android:layout_below="@+id/par_imageview_image"
+        android:layout_centerHorizontal="true"
+        android:textSize="40sp"/>
+
+<androidx.cardview.widget.CardView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/par_textview_imagename"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="28dp"
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="@color/black">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="1dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/white"
+        app:contentPaddingTop="20dp"
+        app:contentPaddingRight="40dp"
+        app:contentPaddingLeft="40dp"
+        app:contentPaddingBottom="20dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/par_textview_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GET"
+                android:textSize="32sp"
+                android:textColor="#FFAA1D"/>
+            <TextView
+                android:id="@+id/par_textview_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="100"
+                android:textSize="32sp"
+                android:textColor="#FFAA1D"/>
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_coins"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.cardview.widget.CardView>
+
+</RelativeLayout>

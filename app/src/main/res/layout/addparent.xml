@@ -33,6 +33,7 @@
         android:layout_marginTop="40dp"
         android:padding="12dp"
         android:hint="First Name"
+        android:maxLines="1"
         android:textSize="16sp"
         android:background="@drawable/edittext_border"
         />
@@ -48,6 +49,7 @@
         android:layout_marginTop="40dp"
         android:padding="12dp"
         android:hint="Last Name"
+        android:maxLines="1"
         android:textSize="16sp"
         android:background="@drawable/edittext_border"
         />
@@ -81,7 +83,7 @@
         android:background="@drawable/edittext_border"
         />
     <Button
-        android:id="@+id/par_button_next"
+        android:id="@+id/par_button_done"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/par_edittext_phonenumber"

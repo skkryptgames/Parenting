@@ -33,6 +33,7 @@
         android:layout_marginTop="40dp"
         android:padding="12dp"
         android:hint="First Name"
+        android:maxLines="1"
         android:textSize="16sp"
         android:background="@drawable/edittext_border"
         />
@@ -50,6 +51,7 @@
         android:layout_marginTop="40dp"
         android:padding="12dp"
         android:hint="Last Name"
+        android:maxLines="1"
         android:textSize="16sp"
         android:background="@drawable/edittext_border"
         />
@@ -83,6 +85,7 @@
         android:layout_height="wrap_content"
         android:padding="12dp"
         android:layout_marginStart="20dp"
+        android:maxLength="11"
         android:hint="Gender"
         android:textSize="16sp"
         android:background="@drawable/edittext_border"

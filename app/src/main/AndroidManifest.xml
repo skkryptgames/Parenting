@@ -13,10 +13,10 @@
 
         android:theme="@style/AppTheme" >
       
-        <activity android:name=".CreateAccountActivity"></activity>
 
-        <activity android:name=".LoginScreenActivity" />
-        <activity android:name=".SplashActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".activity.CreateAccountActivity"></activity>
+        <activity android:name=".activity.LoginScreenActivity" />
+        <activity android:name=".activity.SplashActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
