@@ -1,16 +1,20 @@
-package com.example.parenting;
+package com.example.parenting.fragment;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.parenting.R;
 
 public class AddChildFragment extends Fragment {
     Button nextButton,addChildButton;
@@ -29,11 +33,16 @@ public class AddChildFragment extends Fragment {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(!TextUtils.isEmpty(firstName.getText().toString()) && !TextUtils.isEmpty(lastName.getText().toString()) && !TextUtils.isEmpty(age.getText().toString()) && !TextUtils.isEmpty(gender.getText().toString())) {
                 Fragment fragment = new AddParentFragment();
                 FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container,fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
+                }else {
+                    Toast.makeText(getContext(),"Enter valid data",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -41,10 +50,19 @@ public class AddChildFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                firstName.setText("");
-                lastName.setText("");
-                age.setText("");
-                gender.setText("");
+                if(!TextUtils.isEmpty(firstName.getText().toString()) && !TextUtils.isEmpty(lastName.getText().toString()) && !TextUtils.isEmpty(age.getText().toString()) && !TextUtils.isEmpty(gender.getText().toString())) {
+                    gender.clearFocus();
+                    firstName.clearFocus();
+                    lastName.clearFocus();
+                    age.clearFocus();
+                    firstName.setText("");
+                    lastName.setText("");
+                    age.setText("");
+                    gender.setText("");
+
+                }else {
+                    Toast.makeText(getContext(),"Enter valid data",Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
