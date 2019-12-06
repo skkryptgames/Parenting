@@ -1,4 +1,4 @@
-package com.example.parenting;
+package com.example.parenting.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,6 +8,10 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.parenting.adapters.HomeScreenAdapter;
+import com.example.parenting.models.HomeScreenModel;
+import com.example.parenting.R;
+
 import java.util.ArrayList;
 
 public class HomeScreenActivity extends AppCompatActivity {
@@ -16,8 +20,8 @@ public class HomeScreenActivity extends AppCompatActivity {
     private TextView count;
     private ImageView boy;
     private RecyclerView recycler_activities;
-    private ArrayList<Activity> activities = new ArrayList<>();
-    private ActivityAdapter mAdapter;
+    private ArrayList<HomeScreenModel> activities = new ArrayList<>();
+    private HomeScreenAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +36,12 @@ public class HomeScreenActivity extends AppCompatActivity {
         recycler_activities.setLayoutManager(new LinearLayoutManager(this));
 
 
-       activities.add(new Activity(R.drawable.ic_swing, "PLAY"));
-       activities.add(new Activity(R.drawable.ic_abacus, "LEARN"));
-       activities.add(new Activity(R.drawable.ic_apple, "EAT"));
-       activities.add(new Activity(R.drawable.ic_piggy_bank, "SPEND"));
+       activities.add(new HomeScreenModel(R.drawable.ic_swing, "PLAY"));
+       activities.add(new HomeScreenModel(R.drawable.ic_abacus, "LEARN"));
+       activities.add(new HomeScreenModel(R.drawable.ic_apple, "EAT"));
+       activities.add(new HomeScreenModel(R.drawable.ic_piggy_bank, "SPEND"));
 
-       ActivityAdapter mAdapter = new ActivityAdapter(this, activities);
+       HomeScreenAdapter mAdapter = new HomeScreenAdapter(this, activities);
        recycler_activities.setAdapter(mAdapter);
 
 

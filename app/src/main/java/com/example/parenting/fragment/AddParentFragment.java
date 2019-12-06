@@ -1,5 +1,6 @@
 package com.example.parenting.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -16,6 +17,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.parenting.R;
+import com.example.parenting.activity.CreateAccountActivity;
+import com.example.parenting.activity.HomeScreenActivity;
 
 public class AddParentFragment extends Fragment {
     EditText firstName,lastName,email,phoneNumber;
@@ -36,13 +39,9 @@ public class AddParentFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (!TextUtils.isEmpty(firstName.getText().toString()) && !TextUtils.isEmpty(lastName.getText().toString()) && !TextUtils.isEmpty(email.getText().toString()) && !TextUtils.isEmpty(phoneNumber.getText().toString())) {
-
-
-                    Fragment fragment = new TasksFragment();
-                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.fragment_container, fragment);
-                    fragmentTransaction.addToBackStack(null);
-                    fragmentTransaction.commit();
+                    Intent intent=new Intent(getContext(),HomeScreenActivity.class);
+                    startActivity(intent);
+                    ((CreateAccountActivity)getContext()).finish();
                 }else {
                     Toast.makeText(getContext(),"Enter valid data",Toast.LENGTH_SHORT).show();
                 }
